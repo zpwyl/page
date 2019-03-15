@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="zp">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="数据库基本语句与sql优化"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="个人博客"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/zp.github.io/img/favicon.ico">
+  
+
+  <!-- Site Title -->
+  <title>个人博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/zp.github.io/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/zp.github.io/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/zp.github.io//img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">数据库基本语句与sql优化</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/zp.github.io/">
+                  
+                  home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/zp.github.io/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/zpwyl/">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:1156328482@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By zp</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-09-18</span>
+            <span class="time">10:02:42</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/zp.github.io/categories/MySQL/">MySQL</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/zp.github.io/tags/IT/">#IT</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>数据库基本语句与sql优化<br><a id="more"></a></p>
+<h2 id="数据库基本语句与sql优化-Mysql为例"><a href="#数据库基本语句与sql优化-Mysql为例" class="headerlink" title="数据库基本语句与sql优化(Mysql为例)"></a>数据库基本语句与sql优化(Mysql为例)</h2><h3 id="一、-表的操作"><a href="#一、-表的操作" class="headerlink" title="一、    表的操作"></a>一、    表的操作</h3><ul>
+<li><p>创建表</p>
+<blockquote>
+<p>CREATE TABLE \<tablename>([属性名] [类型] [约束条件])</tablename></p>
+</blockquote>
+</li>
+<li><p>修改表</p>
+</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修改字段属性</p>
+<blockquote>
+<p>ALTER TABLE \<tablename> modify colume \<fieldname> \<attribute></attribute></fieldname></tablename></p>
+</blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;添加字段</p>
+<blockquote>
+<p>ALTER TABLE <tablename><br>        ADD \<fieldname> \<attribute></attribute></fieldname></tablename></p>
+<ul>
+<li>删除表<br>DROP TABLE \<tablename>  删除表的数据和结构</tablename></li>
+</ul>
+</blockquote>
+<h3 id="二、-数据操作"><a href="#二、-数据操作" class="headerlink" title="二、    数据操作"></a>二、    数据操作</h3><ul>
+<li>插入数据<blockquote>
+<p>INSTER　INTO　\&lt;tablename>(\&lt;fieldnames>) VALUES (\&lt;values>)</p>
+</blockquote>
+</li>
+<li>修改数据<blockquote>
+<p>UPDATE \&lt;tablename> set \&lt;修改内容>\&lt;设置限定></p>
+</blockquote>
+</li>
+<li>删除数据</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除表的数据（删除空间）</p>
+<blockquote>
+<p>TRUNCATE TABLE \&lt;tablename></p>
+</blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除表中数据（保留空间）</p>
+<blockquote>
+<p>DELETE TABLE \&lt;tablename> </p>
+</blockquote>
+<h3 id="三、查询语句"><a href="#三、查询语句" class="headerlink" title="三、查询语句"></a>三、查询语句</h3><ul>
+<li><h4 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h4><p> 投影查询    </p>
+<blockquote>
+<p>SELECT * FROM \&lt;tablename>查询表中的所有数据<br>SELECT \&lt;fieldnames> FROM \&lt;tablename>查询表中的部分数据<br>SELECT DISTINCT FROM \&lt;tablename>查询表中不重复的数据<br>SELECT \&lt;fieldname> &lt;列标题&gt; from \&lt;tablename>对查询结果中的列标题进行修改</p>
+</blockquote>
+</li>
+</ul>
+<p>​    选择查询</p>
+<p>使用关系表达式（&lt;,&gt;,=,&lt;=,&gt;=,&lt;&gt;,!=,!&lt;,!&gt;）</p>
+<blockquote>
+<p>SELECT * FROM \&lt;tablename> WHERE \&lt;fieldname> &gt;= 60<br>(满足该字段的值大于等于60的所有数据)</p>
+</blockquote>
+<p>​    使用逻辑表达式（NOT,OR,AND）</p>
+<blockquote>
+<p>SELECT * FROM \&lt;tablename> WHERE \&lt;fieldname>=’<strong>‘ AND \&lt;fieldname> = ‘</strong>‘<br>(满足这两个字段的值的所有数据)</p>
+</blockquote>
+<p>​    使用BETWEEN关键字</p>
+<blockquote>
+<p>SELECT * FROM \&lt;tablename> WHERE \&lt;fieldname> BETWEEN <strong> AND </strong><br>(满足该字段在这两个值之间的所有数据)</p>
+</blockquote>
+<p>​    使用IN关键字</p>
+<blockquote>
+<p>SELECT * FROM \&lt;tablename> WHERE \&lt;fieldname> IN(‘<strong>‘, ‘</strong>‘)<br>(满足字段是括号内的值的所有数据)</p>
+</blockquote>
+<p>​    使用LIKE关键字</p>
+<p>​        -通配符</p>
+<p>​        % 包含零个或多个字符的任意字符串</p>
+<p>​        _ 任意单个字符</p>
+<p>​        [  ] 指定范围内的单个字符</p>
+<p>​        [^ ]不在指定范围内的单个字符</p>
+<blockquote>
+<p>SELECT * FROM \&lt;tablename> WHERE \&lt;fieldname> LIKE ‘张%’<br>(所有姓张的人的数据)</p>
+</blockquote>
+<p>​    是否为空查询</p>
+<blockquote>
+<p>SELECT * FROM \&lt;tablename> WHERE \&lt;fieldname> IS NULL<br>满足该字段为空的所有数据</p>
+</blockquote>
+<p>​    复合条件查询</p>
+<blockquote>
+<p>使用逻辑查询将多个搜索条件合并起来<br>SELECT * FROM \&lt;tablename> WHERE \&lt;fieldname> IS NULL AND \&lt;fieldname> LIKE ‘张%’</p>
+</blockquote>
+<ul>
+<li>聚合函数查询</li>
+</ul>
+<p>常用的聚合函数</p>
+<blockquote>
+<p>sum(列名)  对一个数字列求和</p>
+</blockquote>
+<blockquote>
+<p>avg(列名)   对一个数字列求平均值</p>
+</blockquote>
+<blockquote>
+<p>min(列名)   返回一个数字、字符串或日期列的最小值</p>
+</blockquote>
+<blockquote>
+<p>max(列名)   返回一个数字、字符串或日期列的最大值</p>
+</blockquote>
+<blockquote>
+<p>count(列名)  返回一个列的数据项数</p>
+</blockquote>
+<blockquote>
+<p>count(*)  返回找到的行数</p>
+</blockquote>
+<ul>
+<li><h3 id="分组与汇总查询"><a href="#分组与汇总查询" class="headerlink" title="分组与汇总查询"></a>分组与汇总查询</h3><blockquote>
+<p>SELECT \&lt;fieldname>, count(fieldname) FROM \&lt;tablename> GROUP BY \&lt;fieldname><br>根据该字段分组得到该字段的数量</p>
+</blockquote>
+</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;汇总：<br>    Cube,rollup</p>
+<ul>
+<li><h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3></li>
+<li>内连接</li>
+</ul>
+<p>把两个表中的数据连接生成第三个表</p>
+<blockquote>
+<p>SELECT \&lt;fieldnames> FROM \&lt;table1> INNER JOIN \&lt;table2> ON <condition></condition></p>
+</blockquote>
+<blockquote>
+<p>SELECT \&lt;fieldnames> FROM \&lt;table1>,\&lt;table2> WHERE \&lt;condition></p>
+</blockquote>
+<ul>
+<li>自连接</li>
+</ul>
+<p>将同一个表的不同行连接起来</p>
+<blockquote>
+<p>SELECT <fieldnames> FROM <table> a INNER JOIN <table> b ON <condition></condition></table></table></fieldnames></p>
+</blockquote>
+<blockquote>
+<p>SELECT <fieldnames> FROM <table1> a ,<table2> b WHERE <condition></condition></table2></table1></fieldnames></p>
+</blockquote>
+<ul>
+<li><p>外连接</p>
+<p> 左外连接：除了保存所有匹配的数据记录，还保留左表中未匹配的数据记录</p>
+<blockquote>
+<p>SELECT * FROM \<table1> LEFT OUTER JOIN \<table2> ON <condition></condition></table2></table1></p>
+</blockquote>
+<p> 右外连接：除了保存所有匹配的数据记录，还保留右表中未匹配的数据记录。</p>
+<blockquote>
+<p>SELECT * FROM \<table1> RIGHT OUTER JOIN \<table2> ON <condition></condition></table2></table1></p>
+</blockquote>
+<p> 全外连接: Mysql不支持全外连接，通过union集合查询连接左外和右外连接完成</p>
+</li>
+<li><p>交叉连接</p>
+</li>
+</ul>
+<p>笛卡尔乘积，显示所有行的全部组合</p>
+<ul>
+<li><h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3>无关子查询</li>
+</ul>
+<p>通过select嵌套，使用比较运算符来进行比较结果（ANY,ALL,IN）<br>无关子查询不依赖外部查询，先执行子查询，返回数据供外部查询使用</p>
+<blockquote>
+<p>SELECT * FROM \<tablename> WHERE \<fieldname> = (SELECT \<fieldname> FROM \<tablename> WHERE \<fieldname> = \<condition>)<br>相关子查询</condition></fieldname></tablename></fieldname></fieldname></tablename></p>
+</blockquote>
+<p>相关子查询依赖外部查询，外部查询每执行一次，子查询都会返回一个匹配结果，直到处理完外部查询的每一行。</p>
+<ul>
+<li><h3 id="其他查询"><a href="#其他查询" class="headerlink" title="其他查询"></a>其他查询</h3><p>集合运算查询</p>
+<p>​    UNION联合查询</p>
+</li>
+</ul>
+<p>联合查询是将两个或两个以上的SELECT语句通过UNION运算符连接起来的传</p>
+<blockquote>
+<p>SELECT \<table1>.\<field1> FROM \<table1>,\<table2><br>WHERE \<table1>.\<field2> = ‘**‘ AND \<table1>.\<field> = \<table2>.\<field><br>UNION<br>SELECT \<table1>.\<field1> FROM \<table1>,\<table2><br>WHERE \<table1>.\<field2> = ‘**‘ AND \<table1>.\<field> = \<table2>.\<field></field></table2></field></table1></field2></table1></table2></table1></field1></table1></field></table2></field></table1></field2></table1></table2></table1></field1></table1></p>
+</blockquote>
+<p>​        EXCEPT，INTERSECT查询</p>
+<p>EXCEPT: 由EXCEPT运算符左侧的查询返回而又不包括在右侧查询所返回的值中的所有非重复值。</p>
+<p>INTERSECT：其左右侧查询返回的所有非重复值。</p>
+<p>​        对查询结果排序</p>
+<blockquote>
+<p>ORDER BY <fieldname> ASC 按升序排列<br>ORDER BY <fieldname> DESC 按降序排列</fieldname></fieldname></p>
+</blockquote>
+<h3 id="四、数据库优化"><a href="#四、数据库优化" class="headerlink" title="四、数据库优化"></a>四、数据库优化</h3><ul>
+<li><h4 id="避免全盘扫描"><a href="#避免全盘扫描" class="headerlink" title="避免全盘扫描"></a>避免全盘扫描</h4><ul>
+<li>避免在 where 子句中对字段进行 null 值判断</li>
+<li>避免在 where 子句中使用!=或&lt;&gt;操作符</li>
+<li>避免在 where 子句中使用 or 来连接条件</li>
+<li>in 和 not in 也要慎用，否则会导致全表扫描</li>
+<li>%abc% 也会导致全盘扫描</li>
+<li>避免在 where 子句中对字段进行表达式操作</li>
+<li>避免在where子句中对字段进行函数操作</li>
+</ul>
+</li>
+<li><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li>尽量避免大事务操作，提高系统并发能力。</li>
+<li>尽量避免向客户端返回大数据量，若数据量过大，应该考虑相应需求是否合理。</li>
+<li>索引并不是越多越好，索引固然可以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率</li>
+<li>任何地方都不要使用 select <em> from t ，用具体的字段列表代替“</em>”，不要返回用不到的任何字段</li>
+<li>尽量使用数字型字段</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/zp.github.io/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

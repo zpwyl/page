@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="zp">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Git安装和使用"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="个人博客"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/zp.github.io/img/favicon.ico">
+  
+
+  <!-- Site Title -->
+  <title>个人博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/zp.github.io/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/zp.github.io/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/zp.github.io//img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Git安装和使用</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/zp.github.io/">
+                  
+                  home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/zp.github.io/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/zpwyl/">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:1156328482@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By zp</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-09-19</span>
+            <span class="time">10:02:42</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/zp.github.io/categories/Study/">Study</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/zp.github.io/tags/IT/">#IT</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>Git安装详解和常用命令<br><a id="more"></a></p>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><h3 id="在Linux上"><a href="#在Linux上" class="headerlink" title="在Linux上"></a>在Linux上</h3><p>首先，你可以试着输入<code>git</code>，看看系统有没有安装Git：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git</span><br><span class="line">The program &apos;git&apos; is currently not installed. You can install it by typing:</span><br><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<p>像上面的命令，有很多Linux会友好地告诉你Git没有安装，还会告诉你如何安装Git。</p>
+<p>如果你碰巧用Debian或Ubuntu Linux，通过一条<code>sudo apt-get install git</code>就可以直接完成Git的安装，非常简单。</p>
+<p>老一点的Debian或Ubuntu Linux，要把命令改为<code>sudo apt-get install git-core</code>，因为以前有个软件也叫GIT（GNU Interactive Tools），结果Git就只能叫<code>git-core</code>了。由于Git名气实在太大，后来就把GNU Interactive Tools改成<code>gnuit</code>，<code>git-core</code>正式改为<code>git</code>。</p>
+<p>如果是其他Linux版本，可以直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：<code>./config</code>，<code>make</code>，<code>sudo make install</code>这几个命令安装就好了。</p>
+<h3 id="在Mac-OS-X上"><a href="#在Mac-OS-X上" class="headerlink" title="在Mac OS X上"></a>在Mac OS X上</h3><p>如果你正在使用Mac做开发，有两种安装Git的方法。</p>
+<p>一是安装homebrew，然后通过homebrew安装Git，具体方法请参考homebrew的文档：<a href="http://brew.sh/" target="_blank" rel="noopener">http://brew.sh/</a>。</p>
+<p>第二种方法更简单，也是推荐的方法，就是直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode，选择菜单“Xcode”-&gt;“Preferences”，在弹出窗口中找到“Downloads”，选择“Command Line Tools”，点“Install”就可以完成安装了。</p>
+<p><img src="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907061183ba2a452af9de4a8a8640339239bc3e5e000/0" alt="install-git-by-xcode"></p>
+<p>Xcode是Apple官方IDE，功能非常强大，是开发Mac和iOS App的必选装备，而且是免费的！</p>
+<h3 id="在Windows上"><a href="#在Windows上" class="headerlink" title="在Windows上"></a>在Windows上</h3><p>在Windows上使用Git，可以从Git官网直接<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载安装程序</a>，（网速慢的同学请移步<a href="https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fgit" target="_blank" rel="noopener">国内镜像</a>），然后按默认选项安装即可。</p>
+<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your Name&quot;</span><br><span class="line">$ git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+<p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。</p>
+<p>注意<code>git config</code>命令的<code>--global</code>参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。](<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000</a>)</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>一、新建代码库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#在当前目录新建一个Git代码库</span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">#新建一个目录，将其初始化为Git代码库</span><br><span class="line">git init [project-name]</span><br><span class="line"></span><br><span class="line">#下载一个项目和它的整个代码历史</span><br><span class="line">git clone [url]</span><br></pre></td></tr></table></figure>
+<p>二、配置<br>Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 显示当前的Git配置</span><br><span class="line">git config --list</span><br><span class="line"></span><br><span class="line"># 编辑Git配置文件</span><br><span class="line">git config -e [--global]</span><br><span class="line"></span><br><span class="line"># 设置提交代码时的用户信息</span><br><span class="line">git config [--global] user.name &quot;[name]&quot;</span><br><span class="line">git config [--global] user.email &quot;[email address]&quot;</span><br></pre></td></tr></table></figure></p>
+<p>三、增加/删除文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 添加指定文件到暂存区</span><br><span class="line">git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"># 添加指定目录到暂存区，包括子目录</span><br><span class="line">git add [dir]</span><br><span class="line"></span><br><span class="line"># 添加当前目录的所有文件到暂存区</span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"># 添加每个变化前，都会要求确认</span><br><span class="line"># 对于同一个文件的多处变化，可以实现分次提交</span><br><span class="line">git add -p</span><br><span class="line"></span><br><span class="line"># 删除工作区文件，并且将这次删除放入暂存区</span><br><span class="line">git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"># 停止追踪指定文件，但该文件会保留在工作区</span><br><span class="line">git rm --cached [file]</span><br><span class="line"></span><br><span class="line"># 改名文件，并且将这个改名放入暂存区</span><br><span class="line">git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure></p>
+<p>四、代码提交<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 提交暂存区到仓库区</span><br><span class="line">git commit -m [message]</span><br><span class="line"></span><br><span class="line"># 提交暂存区的指定文件到仓库区</span><br><span class="line">git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line">git commit -a</span><br><span class="line"></span><br><span class="line"># 提交时显示所有diff信息</span><br><span class="line">git commit -v</span><br><span class="line"></span><br><span class="line"># 使用一次新的commit，替代上一次提交</span><br><span class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line">git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"># 重做上一次commit，并包括指定文件的新变化</span><br><span class="line">git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure></p>
+<p>五、分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"># 列出所有远程分支</span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"># 列出所有本地分支和远程分支</span><br><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">git branch [branch-name]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，指向指定commit</span><br><span class="line">git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，与指定的远程分支建立追踪关系</span><br><span class="line">git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># 切换到指定分支，并更新工作区</span><br><span class="line">git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"># 切换到上一个分支</span><br><span class="line">git checkout -</span><br><span class="line"></span><br><span class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</span><br><span class="line">git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">git merge [branch]</span><br><span class="line"></span><br><span class="line"># 选择一个commit，合并进当前分支</span><br><span class="line">git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"># 删除分支</span><br><span class="line">git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"># 删除远程分支</span><br><span class="line">git push origin --delete [branch-name]</span><br><span class="line">git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
+<p>六、标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有tag</span><br><span class="line">git tag</span><br><span class="line"></span><br><span class="line"># 新建一个tag在当前commit</span><br><span class="line">git tag [tag]</span><br><span class="line"></span><br><span class="line"># 新建一个tag在指定commit</span><br><span class="line">git tag [tag] [commit]</span><br><span class="line"></span><br><span class="line"># 删除本地tag</span><br><span class="line">git tag -d [tag]</span><br><span class="line"></span><br><span class="line"># 删除远程tag</span><br><span class="line">git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line"># 查看tag信息</span><br><span class="line">git show [tag]</span><br><span class="line"></span><br><span class="line"># 提交指定tag</span><br><span class="line">git push [remote] [tag]</span><br><span class="line"></span><br><span class="line"># 提交所有tag</span><br><span class="line">git push [remote] --tags</span><br><span class="line"></span><br><span class="line"># 新建一个分支，指向某个tag</span><br><span class="line">git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
+<p>七、查看信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"># 显示有变更的文件</span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"># 显示当前分支的版本历史</span><br><span class="line">git log</span><br><span class="line"></span><br><span class="line"># 显示commit历史，以及每次commit发生变更的文件</span><br><span class="line">git log --stat</span><br><span class="line"></span><br><span class="line"># 搜索提交历史，根据关键词</span><br><span class="line">git log -S [keyword]</span><br><span class="line"></span><br><span class="line"># 显示某个commit之后的所有变动，每个commit占据一行</span><br><span class="line">git log [tag] HEAD --pretty=format:%s</span><br><span class="line"></span><br><span class="line"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span><br><span class="line">git log [tag] HEAD --grep feature</span><br><span class="line"></span><br><span class="line"># 显示某个文件的版本历史，包括文件改名</span><br><span class="line">git log --follow [file]</span><br><span class="line">git whatchanged [file]</span><br><span class="line"></span><br><span class="line"># 显示指定文件相关的每一次diff</span><br><span class="line">git log -p [file]</span><br><span class="line"></span><br><span class="line"># 显示过去5次提交</span><br><span class="line">git log -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"># 显示所有提交过的用户，按提交次数排序</span><br><span class="line">git shortlog -sn</span><br><span class="line"></span><br><span class="line"># 显示指定文件是什么人在什么时间修改过</span><br><span class="line">git blame [file]</span><br><span class="line"></span><br><span class="line"># 显示暂存区和工作区的代码差异</span><br><span class="line">git diff</span><br><span class="line"></span><br><span class="line"># 显示暂存区和上一个commit的差异</span><br><span class="line">git diff --cached [file]</span><br><span class="line"></span><br><span class="line"># 显示工作区与当前分支最新commit之间的差异</span><br><span class="line">git diff HEAD</span><br><span class="line"></span><br><span class="line"># 显示两次提交之间的差异</span><br><span class="line">git diff [first-branch]...[second-branch]</span><br><span class="line"></span><br><span class="line"># 显示今天你写了多少行代码</span><br><span class="line">git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"></span><br><span class="line"># 显示某次提交的元数据和内容变化</span><br><span class="line">git show [commit]</span><br><span class="line"></span><br><span class="line"># 显示某次提交发生变化的文件</span><br><span class="line">git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"># 显示某次提交时，某个文件的内容</span><br><span class="line">git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"># 显示当前分支的最近几次提交</span><br><span class="line">git reflog</span><br><span class="line"></span><br><span class="line"># 从本地master拉取代码更新当前分支：branch 一般为master</span><br><span class="line">git rebase [branch]</span><br></pre></td></tr></table></figure></p>
+<p>八、远程同步<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">git remote update  --更新远程仓储</span><br><span class="line"># 下载远程仓库的所有变动</span><br><span class="line">git fetch [remote]</span><br><span class="line"></span><br><span class="line"># 显示所有远程仓库</span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"># 显示某个远程仓库的信息</span><br><span class="line">git remote show [remote]</span><br><span class="line"></span><br><span class="line"># 增加一个新的远程仓库，并命名</span><br><span class="line">git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"># 取回远程仓库的变化，并与本地分支合并</span><br><span class="line">git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"># 上传本地指定分支到远程仓库</span><br><span class="line">git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"># 强行推送当前分支到远程仓库，即使有冲突</span><br><span class="line">git push [remote] --force</span><br><span class="line"></span><br><span class="line"># 推送所有分支到远程仓库</span><br><span class="line">git push [remote] --all</span><br></pre></td></tr></table></figure></p>
+<p>九、撤销<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># 恢复暂存区的指定文件到工作区</span><br><span class="line">git checkout [file]</span><br><span class="line"></span><br><span class="line"># 恢复某个commit的指定文件到暂存区和工作区</span><br><span class="line">git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"># 恢复暂存区的所有文件到工作区</span><br><span class="line">git checkout .</span><br><span class="line"></span><br><span class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span><br><span class="line">git reset [file]</span><br><span class="line"></span><br><span class="line"># 重置暂存区与工作区，与上一次commit保持一致</span><br><span class="line">git reset --hard</span><br><span class="line"></span><br><span class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span><br><span class="line">git reset [commit]</span><br><span class="line"></span><br><span class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span><br><span class="line">git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span><br><span class="line">git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"># 新建一个commit，用来撤销指定commit</span><br><span class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">git revert [commit]</span><br><span class="line"></span><br><span class="line"># 暂时将未提交的变化移除，稍后再移入</span><br><span class="line">git stash</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure></p>
+<p>部分转载<br><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000" target="_blank" rel="noopener">廖雪峰官方网站Git安装</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/zp.github.io/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
