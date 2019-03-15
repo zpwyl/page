@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="zp">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="八大排序算法"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="个人博客"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/zp.github.io/img/favicon.ico">
+  
+
+  <!-- Site Title -->
+  <title>个人博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/zp.github.io/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/zp.github.io/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/zp.github.io//img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">八大排序算法</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/zp.github.io/">
+                  
+                  home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/zp.github.io/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/zpwyl/">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:1156328482@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By zp</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-10-20</span>
+            <span class="time">12:25:49</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/zp.github.io/categories/Python/">Python</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/zp.github.io/tags/算法/">#算法</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>排序算法可以说是一项基本功，解决实际问题中经常遇到，针对实际数据的特点选择合适的排序算法可以使程序获得更高的效率，有时候排序的稳定性还是实际问题中必须考虑的，这篇博客对常见的排序算法进行整理，包括：插入排序、选择排序、冒泡排序、快速排序、堆排序、归并排序、希尔排序、基数<br><a id="more"></a></p>
+<h3 id="一、冒泡排序算法"><a href="#一、冒泡排序算法" class="headerlink" title="一、冒泡排序算法:"></a>一、冒泡排序算法:</h3><p>过程：每一次排序将最大的排在最后</p>
+<p>平均时间复杂度O(n^2)</p>
+<p>稳定内排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def bubbleSort(arr):</span><br><span class="line">    for i in range(1, len(arr)):</span><br><span class="line">        for j in range(len(arr)-i):</span><br><span class="line">            if arr[j] &gt; arr[j + 1]:</span><br><span class="line">                arr[j], arr[j + 1] = arr[j + 1], arr[j]</span><br><span class="line">    return arr</span><br></pre></td></tr></table></figure>
+<h3 id="二-、快速排序算法"><a href="#二-、快速排序算法" class="headerlink" title="二 、快速排序算法"></a>二 、快速排序算法</h3><p>过程：选择一个其中一个数(第一个或者最后一个)，比他小的放在左边,比他大的放在右边，重复执行</p>
+<p>时间复杂度n(log(n))</p>
+<p>稳定内排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">def quickSort(arr, left=None, right=None):</span><br><span class="line">    left = 0 if not isinstance(left,(int, float)) else left</span><br><span class="line">    right = len(arr)-1 if not isinstance(right,(int, float)) else right</span><br><span class="line">    if left &lt; right:</span><br><span class="line">        partitionIndex = partition(arr, left, right)</span><br><span class="line">        quickSort(arr, left, partitionIndex-1)</span><br><span class="line">        quickSort(arr, partitionIndex+1, right)</span><br><span class="line">    return arr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def partition(arr, left, right):</span><br><span class="line">    pivot = left</span><br><span class="line">    index = pivot+1</span><br><span class="line">    i = index</span><br><span class="line">    while i &lt;= right:</span><br><span class="line">        if arr[i] &lt; arr[pivot]:</span><br><span class="line">            arr[i], arr[index] = arr[index], arr[i]</span><br><span class="line">            index += 1</span><br><span class="line">        i += 1</span><br><span class="line">    arr[pivot], arr[index-1] = arr[index-1], arr[pivot]</span><br><span class="line">    return index-1</span><br></pre></td></tr></table></figure></p>
+<h3 id="三、选择排序"><a href="#三、选择排序" class="headerlink" title="三、选择排序"></a>三、选择排序</h3><p>过程：从第一个开始，每次排序将最小的数放在第j个</p>
+<p>时间复杂度O(n^2)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def selectSort(arr):</span><br><span class="line">    for i in range(len(arr)-1):</span><br><span class="line">        mins = i</span><br><span class="line">        for j in range(i+1,len(arr)):</span><br><span class="line">            if arr[j] &lt; arr[mins]:</span><br><span class="line">                mins = j</span><br><span class="line"></span><br><span class="line">        if i != mins:</span><br><span class="line">            arr[i], arr[mins] = arr[mins], arr[i]</span><br><span class="line">    return arr</span><br></pre></td></tr></table></figure></p>
+<h3 id="四、堆排序算法"><a href="#四、堆排序算法" class="headerlink" title="四、堆排序算法"></a>四、堆排序算法</h3><p>过程：创建堆,堆顶的数最大，每次输出堆顶的数</p>
+<p>时间复杂度O(nlogn)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">def buildMaxHeap(arr):</span><br><span class="line">    import math</span><br><span class="line">    for i in range(math.floor(len(arr)/2), -1, -1):</span><br><span class="line">        heapify(arr, i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def heapify(arr, i):</span><br><span class="line">    left = 2*i+1</span><br><span class="line">    right = 2*i+2</span><br><span class="line">    largest = i</span><br><span class="line">    if left &lt; arrLen and arr[left] &gt; arr[largest]:</span><br><span class="line">        largest = left</span><br><span class="line">    if right &lt; arrLen and arr[right] &gt; arr[largest]:</span><br><span class="line">        largest = right</span><br><span class="line"></span><br><span class="line">    if largest != i:</span><br><span class="line">        swap(arr, i, largest)</span><br><span class="line">        heapify(arr, largest)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def swap(arr, i, j):</span><br><span class="line">    arr[i], arr[j] = arr[j], arr[i]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def heapSort(arr):</span><br><span class="line">    global arrLen</span><br><span class="line">    arrLen = len(arr)</span><br><span class="line">    buildMaxHeap(arr)</span><br><span class="line">    for i in range(len(arr)-1,0,-1):</span><br><span class="line">        swap(arr,0,i)</span><br><span class="line">        arrLen -=1</span><br><span class="line">        heapify(arr, 0)</span><br><span class="line">    return arr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#利用heapq库实现堆排序</span><br><span class="line">import heapq</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def heapqSort(arr):</span><br><span class="line">    result = []</span><br><span class="line">    heapq.heapify(arr)</span><br><span class="line">    for i in range(len(arr)):</span><br><span class="line">        result.append(heapq.heappop(arr))</span><br><span class="line">    print(result)</span><br></pre></td></tr></table></figure></p>
+<h3 id="五、直接插入排序"><a href="#五、直接插入排序" class="headerlink" title="五、直接插入排序"></a>五、直接插入排序</h3><p>时间复杂度O(n^2)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def insertSort(arr):</span><br><span class="line">    for i in range(len(arr)):</span><br><span class="line">        perindex = i-1</span><br><span class="line">        current = arr[i]</span><br><span class="line">        while perindex &gt;= 0 and arr[perindex] &gt; current:</span><br><span class="line">            arr[perindex+1] = arr[perindex]</span><br><span class="line">            perindex -= 1</span><br><span class="line">        arr[perindex+1] = current</span><br><span class="line">    return arr</span><br></pre></td></tr></table></figure>
+<h3 id="六、希尔排序算法"><a href="#六、希尔排序算法" class="headerlink" title="六、希尔排序算法"></a>六、希尔排序算法</h3><p>时间复杂度O(nlogn)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def shellSort(arr):</span><br><span class="line">    step = int(len(arr)/2)</span><br><span class="line">    while step &gt; 0:</span><br><span class="line">        for i in range(step, len(arr)):</span><br><span class="line">            while(i &gt;= step and arr[i] &lt; arr[i-step]):</span><br><span class="line">                arr[i],arr[i-step] = arr[i-step],arr[i]</span><br><span class="line">                i -= step</span><br><span class="line">        step = int(step/2)</span><br><span class="line">    return arr</span><br></pre></td></tr></table></figure>
+<h3 id="七、归并排序算法"><a href="#七、归并排序算法" class="headerlink" title="七、归并排序算法"></a>七、归并排序算法</h3><p>时间复杂度O(nlogn)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">def mergeSort(arr):</span><br><span class="line">    import math</span><br><span class="line">    if(len(arr)&lt;2):</span><br><span class="line">        return arr</span><br><span class="line">    middle = math.floor(len(arr)/2)</span><br><span class="line">    left, right = arr[0:middle], arr[middle:]</span><br><span class="line">    return merge(mergeSort(left), mergeSort(right))</span><br><span class="line"></span><br><span class="line">def merge(left,right):</span><br><span class="line">    result = []</span><br><span class="line">    while left and right:</span><br><span class="line">        if left[0] &lt;= right[0]:</span><br><span class="line">            result.append(left.pop(0));</span><br><span class="line">        else:</span><br><span class="line">            result.append(right.pop(0));</span><br><span class="line">    while left:</span><br><span class="line">        result.append(left.pop(0));</span><br><span class="line">    while right:</span><br><span class="line">        result.append(right.pop(0));</span><br><span class="line">    return result</span><br></pre></td></tr></table></figure>
+<h3 id="八、基数排序算法"><a href="#八、基数排序算法" class="headerlink" title="八、基数排序算法"></a>八、基数排序算法</h3><p>时间复杂度O(n * k)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def countingSort(arr):</span><br><span class="line">    k = max(arr)</span><br><span class="line">    n = len(arr)  # 计算a序列的长度</span><br><span class="line">    b = [0 for i in range(n)]  # 设置输出序列并初始化为0</span><br><span class="line">    c = [0 for i in range(k + 1)]  # 设置计数序列并初始化为0，</span><br><span class="line">    for j in arr:</span><br><span class="line">        c[j] = c[j] + 1</span><br><span class="line">    for i in range(1, len(c)):</span><br><span class="line">        c[i] = c[i] + c[i-1]</span><br><span class="line">    for j in arr:</span><br><span class="line">        b[c[j] - 1] = j</span><br><span class="line">        c[j] = c[j] - 1</span><br><span class="line">    return b</span><br></pre></td></tr></table></figure>
+<h3 id="二分法查询"><a href="#二分法查询" class="headerlink" title="二分法查询"></a>二分法查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">def BinarySearch(arr, key):</span><br><span class="line">     # 记录数组的最高位和最低位</span><br><span class="line">     min = 0</span><br><span class="line">     max = len(arr) - 1</span><br><span class="line"> </span><br><span class="line">     if key in arr:</span><br><span class="line">         # 建立一个死循环，直到找到key</span><br><span class="line">         while True:</span><br><span class="line">             # 得到中位数</span><br><span class="line">             # 这里一定要加int，防止列表是偶数的时候出现浮点数据</span><br><span class="line">             center = int((min + max) / 2)</span><br><span class="line">             # key在数组左边</span><br><span class="line">             if arr[center] &gt; key:</span><br><span class="line">                 max = center - 1</span><br><span class="line">             # key在数组右边</span><br><span class="line">             elif arr[center] &lt; key:</span><br><span class="line">                 min = center + 1</span><br><span class="line">             # key在数组中间</span><br><span class="line">             elif arr[center] == key:</span><br><span class="line">                 print(str(key) + &quot;在数组里面的第&quot; + str(center) + &quot;个位置&quot;)</span><br><span class="line">                 return arr[center]</span><br><span class="line">     else:</span><br><span class="line">         print(&quot;没有该数字!&quot;)</span><br></pre></td></tr></table></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/zp.github.io/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
